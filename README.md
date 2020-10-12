@@ -1,6 +1,9 @@
 # RISC-V Green Card
 An unofficial reference card for RISC-V, the free and libre ISA from Berkeley.
 
+## Modified for CASS @ KU Leuven
+This is a reduced sheet of the original. Feel free to reuse/change without mentioning our attributions or changes but please respect the original author's license.
+
 ## Why?
 
 I wanted a better assembly reference card for my [CS 61C][CS61C] course at UC
