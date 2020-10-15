@@ -4,9 +4,9 @@
     Other formats: \> \texttt{Inst rs1, rs2}\\
     \> \texttt{Inst rs1, immediate}
 \end{tabbing}
+
 \begin{multicols}{2}
 \textbf{RV32I Base Integer Instructions}\\
-
         \begin{tabular}
         {| T | l | l |} \hline
         \rm Inst & Name                    & \rm Description (C)          \\ \hline
@@ -58,7 +58,6 @@
 \columnbreak
 
 \textbf{Registers}\\
-
 \begin{tabular} {|l | l | l | l|} \hline
 Register     & ABI Name     & Description           & Saver  \\ \hline
 \tt{x0}      & \tt{zero}    & Zero constant         & ---    \\
@@ -74,19 +73,39 @@ Register     & ABI Name     & Description           & Saver  \\ \hline
 \tt{x18-x27} & \tt{s2-s11}  & Saved registers       & Callee \\
 \tt{x28-x31} & \tt{t3-t6}   & Temporaries           & Caller \\ \hline
 \end{tabular}
+
 \end{multicols}
 
-\textbf{RV32M Multiply Extension}\\
-\begin{tabular}
-    {|T | l | c | T | T | T | C } \hline
-    \rm Inst & Name              & \rm Description (C)     \\ \hline
-    mul      & MUL               & rd = (rs1 * rs2)[31:0]  \\
-    mulh     & MUL High          & rd = (rs1 * rs2)[63:32] \\
-    mulsu    & MUL High (S) (U)  & rd = (rs1 * rs2)[63:32] \\
-    mulu     & MUL High (U)      & rd = (rs1 * rs2)[63:32] \\
-    div      & DIV               & rd = rs1 / rs2          \\
-    divu     & DIV (U)           & rd = rs1 / rs2          \\
-    rem      & Remainder         & rd = rs1 \% rs2         \\
-    remu     & Remainder (U)     & rd = rs1 \% rs2         \\
-    \hline
-\end{tabular}
+\begin{multicols}{2}
+    
+    \textbf{RV32M Multiply Extension}\\
+    \begin{tabular}
+        {|T | l | c | T | T | T | C } \hline
+        \rm Inst & Name              & \rm Description (C)     \\ \hline
+        mul      & MUL               & rd = (rs1 * rs2)[31:0]  \\
+        mulh     & MUL High          & rd = (rs1 * rs2)[63:32] \\
+        mulsu    & MUL High (S) (U)  & rd = (rs1 * rs2)[63:32] \\
+        mulu     & MUL High (U)      & rd = (rs1 * rs2)[63:32] \\
+        div      & DIV               & rd = rs1 / rs2          \\
+        divu     & DIV (U)           & rd = rs1 / rs2          \\
+        rem      & Remainder         & rd = rs1 \% rs2         \\
+        remu     & Remainder (U)     & rd = rs1 \% rs2         \\
+        \hline
+    \end{tabular}
+
+    \columnbreak
+
+    \textbf{C compiler datatype sizes}\\
+    \begin{tabular} {|l | l | l |} \hline
+        C type              &  Description             & Bytes in RV32      \\ \hline
+        \texttt{char}       & Character value/byte     & 1                  \\
+        \texttt{short}      & Short integer            & 2                  \\
+        \texttt{int}        & Integer                  & 4                  \\
+        \texttt{long}       & Long integer             & 4                  \\
+        \texttt{long long}  & Long long integer        & 8                  \\
+        \texttt{void*}      & Pointer                  & 4                  \\
+        \texttt{float}      & Single-precision float   & 4                  \\
+        \texttt{double}     & Double-precision float   & 8                  \\
+        \texttt{long double}& Extended-precision float & 16                 \\\hline
+    \end{tabular}
+\end{multicols}
