@@ -9,10 +9,10 @@ Pseudoinstruction & Base Instruction(s) & Meaning \\ \hline
                                            & {\tt l\{b|h|w|d\} rd, symbol[11:0](rd)} \\
 \multirow{2}{*}{\tt s\{b|h|w|d\} rd, symbol, rt} & {\tt auipc rt, symbol[31:12]} & \multirow{2}{*}{Store global} \\
                                                & {\tt s\{b|h|w|d\} rd, symbol[11:0](rt)} \\
-\multirow{2}{*}{\tt fl\{w|d\} rd, symbol, rt} & {\tt auipc rt, symbol[31:12]} & \multirow{2}{*}{Floating-point load global} \\
-                                            & {\tt fl\{w|d\} rd, symbol[11:0](rt)} \\
-\multirow{2}{*}{\tt fs\{w|d\} rd, symbol, rt} & {\tt auipc rt, symbol[31:12]} & \multirow{2}{*}{Floating-point store global} \\
-                                            & {\tt fs\{w|d\} rd, symbol[11:0](rt)} \\
+% \multirow{2}{*}{\tt fl\{w|d\} rd, symbol, rt} & {\tt auipc rt, symbol[31:12]} & \multirow{2}{*}{Floating-point load global} \\
+%                                             & {\tt fl\{w|d\} rd, symbol[11:0](rt)} \\
+% \multirow{2}{*}{\tt fs\{w|d\} rd, symbol, rt} & {\tt auipc rt, symbol[31:12]} & \multirow{2}{*}{Floating-point store global} \\
+%                                             & {\tt fs\{w|d\} rd, symbol[11:0](rt)} \\
 \hline
 {\tt nop} & {\tt addi x0, x0, 0} & No operation \\
 {\tt li rd, immediate} & {\em Myriad sequences} & Load immediate \\
@@ -26,13 +26,13 @@ Pseudoinstruction & Base Instruction(s) & Meaning \\ \hline
 {\tt sltz rd, rs} & {\tt slt rd, rs, x0} & Set if $<$ zero \\
 {\tt sgtz rd, rs} & {\tt slt rd, x0, rs} & Set if $>$ zero \\
 \hline
-{\tt fmv.s rd, rs} & {\tt fsgnj.s rd, rs, rs} & Copy single-precision register \\
-{\tt fabs.s rd, rs} & {\tt fsgnjx.s rd, rs, rs} & Single-precision absolute value \\
-{\tt fneg.s rd, rs} & {\tt fsgnjn.s rd, rs, rs} & Single-precision negate \\
-{\tt fmv.d rd, rs} & {\tt fsgnj.d rd, rs, rs} & Copy double-precision register \\
-{\tt fabs.d rd, rs} & {\tt fsgnjx.d rd, rs, rs} & Double-precision absolute value \\
-{\tt fneg.d rd, rs} & {\tt fsgnjn.d rd, rs, rs} & Double-precision negate \\
-\hline
+% {\tt fmv.s rd, rs} & {\tt fsgnj.s rd, rs, rs} & Copy single-precision register \\
+% {\tt fabs.s rd, rs} & {\tt fsgnjx.s rd, rs, rs} & Single-precision absolute value \\
+% {\tt fneg.s rd, rs} & {\tt fsgnjn.s rd, rs, rs} & Single-precision negate \\
+% {\tt fmv.d rd, rs} & {\tt fsgnj.d rd, rs, rs} & Copy double-precision register \\
+% {\tt fabs.d rd, rs} & {\tt fsgnjx.d rd, rs, rs} & Double-precision absolute value \\
+% {\tt fneg.d rd, rs} & {\tt fsgnjn.d rd, rs, rs} & Double-precision negate \\
+% \hline
 {\tt beqz rs, offset} & {\tt beq rs, x0, offset} & Branch if $=$ zero \\
 {\tt bnez rs, offset} & {\tt bne rs, x0, offset} & Branch if $\neq$ zero \\
 {\tt blez rs, offset} & {\tt bge x0, rs, offset} & Branch if $\leq$ zero \\

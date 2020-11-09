@@ -1,0 +1,63 @@
+\section*{Control and status registers (CSRs)}
+\small
+
+\begin{multicols}{2}
+    
+\newcommand{\tabWidth}{0.31\textwidth}
+\begin{tabular}{|l|l|}
+    \hline
+    \textbf{Example usage} & \textbf{Description} \\
+    \hline
+    \multirow{3}{*}{\texttt{csrrc t0, fcsr, t1}}   & \multirow{3}{\tabWidth}{Atomic Read/Clear CSR: read from the CSR into t0 and clear bits of the CSR according to t1}\\
+    &\\
+    &\\
+    \hline
+    \multirow{3}{*}{\texttt{csrrci t0, fcsr, 10} } & \multirow{3}{\tabWidth}{Atomic Read/Clear CSR Immediate: read from the CSR into t0 and clear bits of the CSR according to a constant}\\
+    &\\
+    &\\
+    \hline
+    \multirow{3}{*}{\texttt{csrrs t0, fcsr, t1} }  & \multirow{3}{\tabWidth}{Atomic Read/Set CSR: read from the CSR into t0 and logical or t1 into the CSR                                }\\
+    &\\
+    &\\
+    \hline
+    \multirow{3}{*}{\texttt{csrrsi t0, fcsr, 10} } & \multirow{3}{\tabWidth}{Atomic Read/Set CSR Immediate: read from the CSR into t0 and logical or a constant into the CSR              }\\
+    &\\
+    &\\
+    \hline
+    \multirow{3}{*}{\texttt{csrrw t0, fcsr, t1} }  & \multirow{3}{\tabWidth}{Atomic Read/Write CSR: read from the CSR into t0 and write t1 into the CSR                                   }\\
+    &\\
+    &\\
+    \hline
+    \multirow{3}{*}{\texttt{csrrwi t0, fcsr, 10} } & \multirow{3}{\tabWidth}{Atomic Read/Write CSR Immediate: read from the CSR into t0 and write a constant into the CSR                 }\\
+    &\\
+    &\\
+    \hline
+\end{tabular}
+
+\columnbreak
+
+\textbf{$\qquad\leftarrow$Modify CSR registers}\\
+\begin{flushright}
+\textbf{CSR register description $\downarrow$}
+    
+    \begin{tabular}{|l|l|l|}
+        \hline
+        \textbf{Number}& \textbf{Name}     & \textbf{Description}                    \\
+        \hline
+        \multicolumn{3}{|c|}{\textbf{User trap setup}}                                        \\
+        \hline
+        \texttt{0x000} & \texttt{ustatus}  & User status register.                   \\
+        \texttt{0x004} & \texttt{uie}      & User interrupt-enable register          \\
+        \texttt{0x005} & \texttt{utvec}    & User trap handler base address          \\
+        \hline
+        \multicolumn{3}{|c|}{\textbf{User trap handling}}                            \\
+        \hline
+        \texttt{0x040} & \texttt{uscratch} & Scratch reg. for user handlers         \\
+        \texttt{0x041} & \texttt{uepc}     & User exception program counter          \\
+        \texttt{0x042} & \texttt{ucause}   & User trap cause                         \\
+        \texttt{0x043} & \texttt{utval}    & User bad address/instruction         \\
+        \texttt{0x044} & \texttt{uip}      & User interrupt pending                  \\
+        \hline
+    \end{tabular}
+\end{flushright}
+\end{multicols}
