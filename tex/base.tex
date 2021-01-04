@@ -62,7 +62,7 @@
 Register     & ABI Name     & Description           & Saver  \\ \hline
 \tt{x0}      & \tt{zero}    & Zero constant         & ---    \\
 \tt{x1}      & \tt{ra}      & Return address        & Caller \\
-\tt{x2}      & \tt{sp}      & Stack pointer         & ---    \\
+\tt{x2}      & \tt{sp}      & Stack pointer         & Callee \\
 \tt{x3}      & \tt{gp}      & Global pointer        & ---    \\
 \tt{x4}      & \tt{tp}      & Thread pointer        & Callee \\
 \tt{x5-x7}   & \tt{t0-t2}   & Temporaries           & Caller \\
@@ -72,7 +72,7 @@ Register     & ABI Name     & Description           & Saver  \\ \hline
 \tt{x12-x17} & \tt{a2-a7}   & Fn args               & Caller \\
 \tt{x18-x27} & \tt{s2-s11}  & Saved registers       & Callee \\
 \tt{x28-x31} & \tt{t3-t6}   & Temporaries           & Caller \\ \hline
-\end{tabular}
+\end{tabular} 
 
 \vspace{10ex}
 \begin{flushright}
