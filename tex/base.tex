@@ -43,7 +43,7 @@
         beq      & Branch ==               & if(rs1 == rs2) PC += imm     \\
         bne      & Branch !=               & if(rs1 != rs2) PC += imm     \\
         blt      & Branch <                & if(rs1 < \enspace rs2) PC += imm \\
-        bge      & Branch $\leq$           & if(rs1 >= rs2) PC += imm     \\
+        bge      & Branch $\geq$           & if(rs1 >= rs2) PC += imm     \\
         bltu     & Branch < (U)            & if(rs1 < \enspace rs2) PC += imm \\
         bgeu     & Branch $\geq$ (U)       & if(rs1 >= rs2) PC += imm     \\ \hline
         jal      & Jump And Link           & rd = PC+4; PC += imm         \\
@@ -54,7 +54,7 @@
         ebreak   & Environment Break       & Transfer control to debugger \\ \hline
         \end{tabular}
 
-        
+
 \columnbreak
 
 \textbf{Registers}\\
@@ -72,19 +72,19 @@ Register     & ABI Name     & Description           & Saver  \\ \hline
 \tt{x12-x17} & \tt{a2-a7}   & Fn args               & Caller \\
 \tt{x18-x27} & \tt{s2-s11}  & Saved registers       & Callee \\
 \tt{x28-x31} & \tt{t3-t6}   & Temporaries           & Caller \\ \hline
-\end{tabular} 
+\end{tabular}
 
 \vspace{10ex}
 \begin{flushright}
     \textbf{Calling convention stack layout$\qquad$}
     \includegraphics[width=0.35\textwidth]{img/call_stack_diagram.pdf}
 \end{flushright}
-    
+
 \end{multicols}
 
 
 \begin{multicols}{2}
-    
+
     \textbf{RV32M Multiply Extension}\\
     \begin{tabular}
         {|l | l | l|} \hline
